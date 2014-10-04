@@ -1,6 +1,6 @@
 'use strict';
 
-function EditFunctionController($stateParams, ES) {
+function EditFunctionController($stateParams, $state, ES) {
     var self = this;
     this.id = $stateParams.id;
     this.fn = {};
@@ -16,7 +16,7 @@ function EditFunctionController($stateParams, ES) {
             body: { doc: this.fn},
         }, function(err, response) {
         });
-    }
+    };
 
     this.create = function() {
         ES.create({
@@ -26,7 +26,20 @@ function EditFunctionController($stateParams, ES) {
         }, function(err, response) {
             console.log(err, response);
         });
-    }
+    };
+
+    this.delete = function() {
+        if (!!this.id && confirm("Are you sure you want to delete this?")) {
+            ES.delete({
+                index: 'cali',
+                type: 'function',
+                id: this.id,
+            }, function(err, response) {
+                if (err) {console.log("DELETE ERROR", err); }
+                $state.go('home');
+            });
+        }
+    };
 
     this.getFn = function() {
         ES.get({
@@ -39,14 +52,14 @@ function EditFunctionController($stateParams, ES) {
             }
             self.fn = response._source;
         });
-    }
+    };
 
     if (this.id) {
         this.getFn();
     }
 
 }
-EditFunctionController.$inject = ['$stateParams', 'ES'];
+EditFunctionController.$inject = ['$stateParams', '$state', 'ES'];
 
 angular.module('cali.help.admin')
     .controller('EditFunctionController', EditFunctionController)
