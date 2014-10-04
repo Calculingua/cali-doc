@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caluclingua Help Admin</title>
+    <script type="text/javascript" src="lib/marked/lib/marked.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="lib/angular-marked/angular-marked.js"></script>
+    <script type="text/javascript" src="lib/elasticsearch/elasticsearch.angular.js"></script>
+    <script type="text/javascript" src="build/app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app="cali.help.admin">
+
+    <aside id="function-list" ng-controller="SidebarController as sb">
+        <div ng-include="'views/partials/sidebar.html'"></div>
+    </aside>
+
+    <main id="content" ui-view>
+        This is where the form will go
+    </main>
+
+</body>
+</html>
