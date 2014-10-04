@@ -82,7 +82,7 @@ exports = module.exports = function(grunt) {
 
         rsync: {
             options: {
-                exclude: [".git*","*.scss","node_modules", ".sass-cache", 'public/lib', 'public/build', 'bower_components'],
+                exclude: [".git*","node_modules", ".sass-cache", 'public/lib', 'public/build', 'bower_components'],
                 recursive: true
             },
             beta: {

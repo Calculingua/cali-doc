@@ -3,7 +3,7 @@
 
 function ES(esFactory) {
     return esFactory({
-        host: 'localhost:9200',
+        host: 'help.calculingua.com:9200',
         apiVersion: '1.2',
         log: 'trace'
     });
