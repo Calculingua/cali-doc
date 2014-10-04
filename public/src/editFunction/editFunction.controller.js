@@ -19,12 +19,15 @@ function EditFunctionController($stateParams, $state, ES) {
     };
 
     this.create = function() {
+        if (!this.fn.name) { return console.log("Need a name"); }
         ES.create({
             index: 'cali',
             type: 'function',
+            id: this.fn.name,
             body: this.fn,
         }, function(err, response) {
             console.log(err, response);
+            $state.go('editFunction', {id: response._id});
         });
     };
 
