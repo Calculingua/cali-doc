@@ -61,15 +61,19 @@ exports = module.exports = function(grunt) {
                 files: ["public/build/app.js"],
                 tasks: ["uglify"]
             },
+            sass: {
+                files: ['public/sass/*.scss'],
+                tasks: ['sass'],
+            }
         },
 
         sass: {
-            dist: {                            // Target
-                options: {                       // Target options
+            dist: {
+                options: {
                     style: 'expanded'
                 },
-                files: {                         // Dictionary of files
-                    'public/css/main.css': ['public/sass/**/*.scss'],       // 'destination': 'source'
+                files: {
+                    'public/css/main.css': ['public/sass/**/*.scss'],
                 }
             }
 

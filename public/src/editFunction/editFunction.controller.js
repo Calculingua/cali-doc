@@ -4,6 +4,7 @@ function EditFunctionController($stateParams, ES) {
     var self = this;
     this.id = $stateParams.id;
     this.fn = {};
+    this.fn.publishStatus = 'draft';
 
 
     this.save = function() {

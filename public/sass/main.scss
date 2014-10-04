@@ -8,5 +8,14 @@
 
 
 #content {
+    position: relative;
     margin-left: 15%;
+
+    .toolbar {
+        position: absolute;
+    }
+}
+
+#function-edit-container {
+    padding-top: 70px; 
 }

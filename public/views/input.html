@@ -1,11 +1,25 @@
+<div ng-include="'views/partials/editToolbar.html'"></div>
 
-
-<div class="container">
+<div class="container" id="function-edit-container">
     <form role="form">
 
-        <div class="form-group">
-            <label>Function Name</label>
-            <input class="form-control" type="text" ng-model="ctrl.fn.name">
+        <div class="row">
+            <div class="form-group col-sm-8">
+                <label>Function Name</label>
+                <input class="form-control" type="text" ng-model="ctrl.fn.name">
+            </div>
+            
+            <div class="form-group col-sm-4">
+                <label>Status</label>
+                <div class="input-group">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="ctrl.fn.publishStatus" value="published"> Published
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="ctrl.fn.publishStatus" value="draft"> Draft
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
